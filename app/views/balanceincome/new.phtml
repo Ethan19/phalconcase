@@ -1,0 +1,75 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["balance_income", "Go Back"]) ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>
+        Create balance_income
+    </h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "balance_income/create",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldMemberId" class="col-sm-2 control-label">Member</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["member_id", "type" => "number", "class" => "form-control", "id" => "fieldMemberId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldChangeBalance" class="col-sm-2 control-label">Change Of Balance</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["change_balance", "size" => 30, "class" => "form-control", "id" => "fieldChangeBalance"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldBeforeBalance" class="col-sm-2 control-label">Before Of Balance</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["before_balance", "size" => 30, "class" => "form-control", "id" => "fieldBeforeBalance"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldAfterBalance" class="col-sm-2 control-label">After Of Balance</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["after_balance", "size" => 30, "class" => "form-control", "id" => "fieldAfterBalance"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldLeftBalance" class="col-sm-2 control-label">Left Of Balance</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["left_balance", "size" => 30, "class" => "form-control", "id" => "fieldLeftBalance"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Save", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>
